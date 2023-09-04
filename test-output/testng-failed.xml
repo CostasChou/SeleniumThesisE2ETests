@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <parameter name="wrongPassword" value="awrongpassword"/>
+    <parameter name="password" value="Xx_17051996Xx"/>
+    <parameter name="emptyUsername" value=""/>
+    <parameter name="browser" value="Chrome"/>
+    <parameter name="wrongUsername" value="awrongusername"/>
+    <parameter name="username" value="it144353"/>
+    <parameter name="emptyPassword" value=""/>
+    <classes>
+      <class name="tests.TC09_HamburgerMenuItemsWhenColapsedOK">
+        <methods>
+          <include name="tearDownTest"/>
+          <include name="tC09_HamburgerMenuItemsWhenColapsedOK" invocation-numbers="0"/>
+          <include name="setUpTest"/>
+        </methods>
+      </class> <!-- tests.TC09_HamburgerMenuItemsWhenColapsedOK -->
+      <class name="tests.TC08_Exams_ExamsCalendarOK">
+        <methods>
+          <include name="tearDownTest"/>
+          <include name="tC08_Exams_ExamsCalendarOK" invocation-numbers="0"/>
+          <include name="setUpTest"/>
+        </methods>
+      </class> <!-- tests.TC08_Exams_ExamsCalendarOK -->
+      <class name="tests.TC04_ManualGuideOK">
+        <methods>
+          <include name="setUpTest"/>
+          <include name="tC04_ManualGuideOK" invocation-numbers="0"/>
+          <include name="tearDownTest"/>
+        </methods>
+      </class> <!-- tests.TC04_ManualGuideOK -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

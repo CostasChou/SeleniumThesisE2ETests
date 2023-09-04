@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//src/test/java/tests/TC01_LogInCorrectUsernameCorrectPasswordOK.java=UTF-8
+encoding//src/test/java/tests/TC02_LogOutOK.java=UTF-8
+encoding//src/test/java/tests/TC04_ManualGuideOK.java=UTF-8
+encoding//src/test/java/tests/TC07_Grades_AllGradesDropDownMenuOK.java=UTF-8
+encoding//src/test/java/tests/TC09_HamburgerMenuItemsWhenColapsedOK.java=UTF-8
+encoding//src/test/java/webpages/Homepage.java=UTF-8
+encoding//src/test/java/webpages/LogInWebpage.java=UTF-8
+encoding//src/test/java/webpages/LogOutWebpage.java=UTF-8
+encoding//src/test/java/webpages/PersonalDataWebpage.java=UTF-8

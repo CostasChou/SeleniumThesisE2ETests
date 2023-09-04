@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test name="Test">
+
+		<!-- Parameters used for tests -->
+			<!-- Possible Values: Chrome, FireFox, MicrosoftEdge -->
+			<parameter name="browser" value="Chrome"></parameter>
+				
+			<parameter name="username" value="it144353"></parameter>
+			<parameter name="password" value=""></parameter>
+			<parameter name="wrongUsername" value="awrongusername"></parameter>
+			<parameter name="wrongPassword" value="awrongpassword"></parameter>
+			<parameter name="emptyUsername" value=""></parameter>
+			<parameter name="emptyPassword" value=""></parameter>
+
+		<!-- Tests will be executed with the following order -->
+		<classes>
+			<class name="tests.TC01_LogInCorrectUsernameCorrectPasswordOK"></class>
+			<class name="tests.TC02_LogOutOK"></class>
+			<class name="tests.TC03_ChangeLanguageOK"></class>
+			<class name="tests.TC04_ManualGuideOK"></class>
+			<class name="tests.TC05_PersonalDataOK"></class>
+			<class name="tests.TC06_InternshipOK"></class> 
+			<class name="tests.TC07_Grades_AllGradesDropDownMenuOK"></class>
+			<class name="tests.TC08_Exams_ExamsCalendarOK"></class>
+			<class name="tests.TC09_HamburgerMenuItemsWhenColapsedOK"></class>
+			<class name="tests.TC10_LogInWithoutEnteringUsernameKO"></class>
+			<class name="tests.TC11_LogInWithoutEnteringPasswordKO"></class>
+			<class name="tests.TC12_LogInWithWrongUsernameCorrectPasswordKO"></class>
+			<class name="tests.TC13_LogInWithCorrectUsernameWrongPasswordKO"></class>
+		</classes>
+
+	</test>
+</suite> 
