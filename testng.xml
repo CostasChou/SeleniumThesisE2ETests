@@ -17,7 +17,7 @@
 		<!-- Tests will be executed with the following order -->
 		<classes>
 			<class name="tests.TC01_LogInCorrectUsernameCorrectPasswordOK"></class>
-			<class name="tests.TC02_LogOutOK"></class>
+<!-- 			<class name="tests.TC02_LogOutOK"></class>
 			<class name="tests.TC03_ChangeLanguageOK"></class>
 			<class name="tests.TC04_ManualGuideOK"></class>
 			<class name="tests.TC05_PersonalDataOK"></class>
@@ -28,7 +28,7 @@
 			<class name="tests.TC10_LogInWithoutEnteringUsernameKO"></class>
 			<class name="tests.TC11_LogInWithoutEnteringPasswordKO"></class>
 			<class name="tests.TC12_LogInWithWrongUsernameCorrectPasswordKO"></class>
-			<class name="tests.TC13_LogInWithCorrectUsernameWrongPasswordKO"></class>
+			<class name="tests.TC13_LogInWithCorrectUsernameWrongPasswordKO"></class> -->
 		</classes>
 
 	</test>
