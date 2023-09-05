@@ -14,7 +14,8 @@ JDK is required to run this project. Download JDK here from the official webpage
 - **src\test\java\webpages**  --> This folder contains all the Webpages that have been used by tests. Each file represents a webpage and contains its corresponding Web - Element Locators, methods to retrieve Web Elements references, methods to perform actions on the Web Elements, and Assertions on the Web Elements. 
 
 
-## Test execution :rocket:
+## Test execution :rocket:  
+⚠️⚠️⚠️ATTENTION! NOT ALL TESTS SHOULD BE EXECUTED PARALLELY! IF TESTS WILL BE EXECUTED PARALLELY IT WILL POSSIBLY AFFECT THE AVAILABILITY OF (https://uniportal.ihu.gr). PLEASE DO NOT EXECUTE MORE THAN 3 TESTS PARALLELY...⚠️⚠️⚠️
 Tests can be executed by right-clicking on the testng.xml file, selecting "Run as" and then selecting "1 TestNG Suite". 
 ▶︎ More info about execution:  :computer:
 The tests will be executed with the order that is described in "testng.xml" file.
