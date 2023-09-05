@@ -49,9 +49,10 @@ public class TC11_LogInWithoutEnteringPasswordKO {
 		extent.attachReporter(htmlReporter);
 	}
 
+	//Test
 	@Test
 	@Parameters({"username", "emptyPassword"})
-	public static void tC11_LogInWithoutEnteringPasswordKO(String username, String password) {
+	public static void tC11_LogInWithoutEnteringPasswordKO(String username, String password) throws Exception {
 		LogInWebpage logInWebPageObj = new LogInWebpage(driver); 
 
 		// Creates a toggle for the given test, adds all log events under it.    
@@ -77,12 +78,9 @@ public class TC11_LogInWithoutEnteringPasswordKO {
 			test.fail("Username " + username + " is  successfully entered in username text field.");
 		}
 		
-		try {
-			Thread.sleep(2500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		//Wait 2.5 seconds
+		Thread.sleep(2500);
+
 		
 		logInWebPageObj.setTextInTextFieldPassword(password);
 		if(logInWebPageObj.getTextOfTextFieldPassword().equalsIgnoreCase(password)) {
@@ -100,13 +98,8 @@ public class TC11_LogInWithoutEnteringPasswordKO {
 			test.fail("Log in button is not clicked");
 		}
 
-		try {
-			Thread.sleep(6000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+		//Wait 6 seconds
+		Thread.sleep(6000);
 
 		Boolean loggedIn = logInWebPageObj.userIsLoggedIn();
 		Boolean passwordErrorMessageIsDisplayedBoolean = driver.getPageSource().contains("Password is a required field.");

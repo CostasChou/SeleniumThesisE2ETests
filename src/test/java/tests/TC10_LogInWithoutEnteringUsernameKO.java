@@ -49,9 +49,10 @@ public class TC10_LogInWithoutEnteringUsernameKO {
 		extent.attachReporter(htmlReporter);
 	}
 
+	//Test
 	@Test
 	@Parameters({"emptyUsername", "password"})
-	public static void tC10_LogInWithoutEnteringUsernameKO(String username, String password) {
+	public static void tC10_LogInWithoutEnteringUsernameKO(String username, String password) throws Exception {
 		LogInWebpage logInWebPageObj = new LogInWebpage(driver); 
 
 		// Creates a toggle for the given test, adds all log events under it.    
@@ -76,12 +77,9 @@ public class TC10_LogInWithoutEnteringUsernameKO {
 			test.fail("Username " + username + " is successfully entered in username text field.");
 		}
 
-		try {
-			Thread.sleep(2500);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+		//Wait 2.5 seconds
+		Thread.sleep(2500);
+
 
 		logInWebPageObj.setTextInTextFieldPassword(password);
 		System.out.println("here2");
@@ -100,12 +98,8 @@ public class TC10_LogInWithoutEnteringUsernameKO {
 			test.fail("Log in button is not clicked");
 		}
 
-		try {
-			Thread.sleep(6000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		//Wait 6 seconds
+		Thread.sleep(6000);
 
 		Boolean usernameErrorMessageIsDisplayedBoolean = driver.getPageSource().contains("Username is a required field.");
 		Boolean loggedIn = logInWebPageObj.userIsLoggedIn();

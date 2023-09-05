@@ -50,9 +50,10 @@ public class TC02_LogOutOK {
 		extent.attachReporter(htmlReporter);
 	}
 
+	// Test
 	@Test
 	@Parameters({"username", "password"})
-	public static void tC02_LogOutOK(String username, String password) {
+	public static void tC02_LogOutOK(String username, String password) throws Exception {
 		LogInWebpage logInWebPageObj = new LogInWebpage(driver); 
 
 		// Creates a toggle for the given test, adds all log events under it.    
@@ -87,12 +88,9 @@ public class TC02_LogOutOK {
 		}
 
 		logInWebPageObj.clickLogInButton();
-		try {
-			Thread.sleep(6000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
+		Thread.sleep(6000);
+		
 		if(logInWebPageObj.userIsLoggedIn()) {
 			test.pass("User is logged in successfully");
 		}
@@ -117,21 +115,13 @@ public class TC02_LogOutOK {
 			test.fail("AM drop down list is not expanded");
 		}
 
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		//Wait 2 seconds
+		Thread.sleep(2000);
 
 		homePageObjHomepage.clicklogOutlistItemOfAmButton();
 
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		//Wait 2 seconds
+		Thread.sleep(2000);
 
 		LogOutWebpage logOutWebpageObj = new LogOutWebpage(driver);
 

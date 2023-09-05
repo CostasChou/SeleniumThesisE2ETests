@@ -52,9 +52,10 @@ public class TC09_HamburgerMenuItemsWhenColapsedOK {
 		extent.attachReporter(htmlReporter);
 	}
 
+	//Test
 	@Test
 	@Parameters({"username", "password"})
-	public static void tC09_HamburgerMenuItemsWhenColapsedOK(String username, String password) {
+	public static void tC09_HamburgerMenuItemsWhenColapsedOK(String username, String password) throws Exception {
 		LogInWebpage logInWebPageObj = new LogInWebpage(driver); 
 
 		// Creates a toggle for the given test, adds all log events under it.    
@@ -96,13 +97,8 @@ public class TC09_HamburgerMenuItemsWhenColapsedOK {
 			test.fail("Log in button is not clicked");
 		}
 
-		try {
-			Thread.sleep(6000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+		//Wait 6 seconds
+		Thread.sleep(6000);
 
 		Boolean userIsLoggedIn = logInWebPageObj.userIsLoggedIn();
 		if(userIsLoggedIn) {
@@ -115,13 +111,13 @@ public class TC09_HamburgerMenuItemsWhenColapsedOK {
 			test.fail("User is not logged in.");
 			assert(userIsLoggedIn);
 		}
-		
+
 		Homepage homebageObj = new Homepage(driver);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		//specify the WebElement till which the page has to be scrolled
 		By logOutButton = By.cssSelector("a[data-toggle='tooltip']");
 		Boolean logOutButtonIsDisplayedBeforeMenuColapseBoolean = driver.findElement(logOutButton).isDisplayed();
-		
+
 		if(logOutButtonIsDisplayedBeforeMenuColapseBoolean) {
 			test.pass("Log out button is displayed before the colapse of thecentral menu");
 			System.out.println("Log out button is displayed before the colapse of thecentral menu?: " + driver.findElement(logOutButton).isDisplayed());
@@ -132,33 +128,25 @@ public class TC09_HamburgerMenuItemsWhenColapsedOK {
 			System.out.println("Is log out button displayed before the colapse of the central menu?: " + driver.findElement(logOutButton).isDisplayed());
 
 		}
-		
+
 		js.executeScript("arguments[0].scrollIntoView();", logOutButton);
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
+		//Wait 2 seconds
+		Thread.sleep(2000);
+
 		homebageObj.clickHamburgerMenuIcon();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+
+		//Wait 3 seconds
+		Thread.sleep(3000);
+
 		//specify the WebElement till which the page has to be scrolled
 		WebElement manualGuideButton = driver.findElement(By.linkText("Εγχειρίδιο χρήσης"));
 		js.executeScript("arguments[0].scrollIntoView();", manualGuideButton);
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+
+		//Wait 3 seconds
+		Thread.sleep(3000);
+
+
 		Boolean result = driver.findElement(logOutButton).isDisplayed();
 		if (result) {
 			test.pass("Log out button is displayed after click on collapse menu");

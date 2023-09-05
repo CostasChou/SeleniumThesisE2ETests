@@ -10,6 +10,13 @@
     <parameter name="username" value="it144353"/>
     <parameter name="emptyPassword" value=""/>
     <classes>
+      <class name="tests.TC02_LogOutOK">
+        <methods>
+          <include name="tearDownTest"/>
+          <include name="setUpTest"/>
+          <include name="tC02_LogOutOK" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- tests.TC02_LogOutOK -->
       <class name="tests.TC09_HamburgerMenuItemsWhenColapsedOK">
         <methods>
           <include name="tearDownTest"/>
@@ -31,6 +38,41 @@
           <include name="tearDownTest"/>
         </methods>
       </class> <!-- tests.TC04_ManualGuideOK -->
+      <class name="tests.TC06_InternshipOK">
+        <methods>
+          <include name="tearDownTest"/>
+          <include name="tC06_InternshipOK" invocation-numbers="0"/>
+          <include name="setUpTest"/>
+        </methods>
+      </class> <!-- tests.TC06_InternshipOK -->
+      <class name="tests.TC07_Grades_AllGradesDropDownMenuOK">
+        <methods>
+          <include name="tearDownTest"/>
+          <include name="setUpTest"/>
+          <include name="tC01LogInCorrectUsernameCorrectPasswordOK" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- tests.TC07_Grades_AllGradesDropDownMenuOK -->
+      <class name="tests.TC03_ChangeLanguageOK">
+        <methods>
+          <include name="setUpTest"/>
+          <include name="tC03_ChangeLanguageOK" invocation-numbers="0"/>
+          <include name="tearDownTest"/>
+        </methods>
+      </class> <!-- tests.TC03_ChangeLanguageOK -->
+      <class name="tests.TC05_PersonalDataOK">
+        <methods>
+          <include name="setUpTest"/>
+          <include name="tC05_PersonalDataOK" invocation-numbers="0"/>
+          <include name="tearDownTest"/>
+        </methods>
+      </class> <!-- tests.TC05_PersonalDataOK -->
+      <class name="tests.TC01_LogInCorrectUsernameCorrectPasswordOK">
+        <methods>
+          <include name="tC01LogInCorrectUsernameCorrectPasswordOK" invocation-numbers="0"/>
+          <include name="tearDownTest"/>
+          <include name="setUpTest"/>
+        </methods>
+      </class> <!-- tests.TC01_LogInCorrectUsernameCorrectPasswordOK -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

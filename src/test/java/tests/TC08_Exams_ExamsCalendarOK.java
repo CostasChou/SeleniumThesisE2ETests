@@ -50,9 +50,10 @@ public class TC08_Exams_ExamsCalendarOK {
 		extent.attachReporter(htmlReporter);
 	}
 
+	//Test
 	@Test
 	@Parameters({"username", "password"})
-	public static void tC08_Exams_ExamsCalendarOK(String username, String password) {
+	public static void tC08_Exams_ExamsCalendarOK(String username, String password) throws Exception {
 		LogInWebpage logInWebPageObj = new LogInWebpage(driver); 
 
 		// Creates a toggle for the given test, adds all log events under it.    
@@ -94,12 +95,9 @@ public class TC08_Exams_ExamsCalendarOK {
 			test.fail("Log in button is not clicked");
 		}
 
-		try {
-			Thread.sleep(6000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		//Wait 6 seconds
+		Thread.sleep(6000);
+
 
 		Homepage homepageObj = new Homepage(driver);
 
@@ -113,12 +111,10 @@ public class TC08_Exams_ExamsCalendarOK {
 		}
 
 		homepageObj.clickExamsOfCentralMenu();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e2) {
-			// TODO Auto-generated catch block
-			e2.printStackTrace();
-		}
+
+		//Wait 3 seconds
+		Thread.sleep(3000);
+
 
 		if(homepageObj.isMyExamsOfExamsOfCentralMenuDisplayed() && homepageObj.isExamsCalendarOfExamsOfCentralMenuDisplayed()) {
 			test.pass("All menu items of exams choice of central menu item are displayed");
@@ -128,22 +124,16 @@ public class TC08_Exams_ExamsCalendarOK {
 		}
 
 		homepageObj.clickExamsCalendarOfExamsOfCentralMenu();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
+
+		//Wait 3 seconds
+		Thread.sleep(3000);
+
 
 		By syllabusDropDownListElement = By.id("studentCourseSyllabusExamSyllabus");
 		driver.findElement(syllabusDropDownListElement).click();
 
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
+		//Wait 3 seconds
+		Thread.sleep(3000);
 
 		By syllabusDropDownListElement2014_2015 = By.xpath("/html[1]/body[1]/div[7]/div[1]/div[2]/div[1]/div[2]/select[1]/option[7]");
 		By syllabusDropDownListElement2015_2016 = By.xpath("/html[1]/body[1]/div[7]/div[1]/div[2]/div[1]/div[2]/select[1]/option[6]");
@@ -164,21 +154,17 @@ public class TC08_Exams_ExamsCalendarOK {
 		}
 
 		driver.findElement(syllabusDropDownListElement2018_2019).click();
-		try {
-			Thread.sleep(4000);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+
+		//Wait 4 seconds
+		Thread.sleep(4000);
+
 
 		By greenColorLabel = By.xpath("/html[1]/body[1]/div[7]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[1]/p[1]");
 		driver.findElement(greenColorLabel).click();
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+
+		//Wait 2 seconds
+		Thread.sleep(2000);
+
 		driver.findElement(greenColorLabel).click();
 
 

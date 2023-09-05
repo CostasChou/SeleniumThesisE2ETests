@@ -49,9 +49,10 @@ public class TC03_ChangeLanguageOK {
 		extent.attachReporter(htmlReporter);
 	}
 
+	//Test
 	@Test
 	@Parameters({"username", "password"})
-	public static void tC03_ChangeLanguageOK(String username, String password) {
+	public static void tC03_ChangeLanguageOK(String username, String password) throws Exception {
 		LogInWebpage logInWebPageObj = new LogInWebpage(driver); 
 
 		// Creates a toggle for the given test, adds all log events under it.    
@@ -85,12 +86,9 @@ public class TC03_ChangeLanguageOK {
 		}
 
 		logInWebPageObj.clickLogInButton();
-		try {
-			Thread.sleep(6000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
+		//Wait 6 seconds
+		Thread.sleep(6000);
 
 		if(logInWebPageObj.userIsLoggedIn()) {
 			test.pass("User is logged in successfully");
@@ -114,20 +112,13 @@ public class TC03_ChangeLanguageOK {
 			test.fail("Language drop down menu is not displayed");
 		}
 
-		try {
-			Thread.sleep(2500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+		//Wait 2.5 seconds
+		Thread.sleep(2500);
+		
 		homepageObjHomepage.clickEnglishChoiceOfLanguageDropDownMenu();
-		try {
-			Thread.sleep(4000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			
+		//Wait 4 seconds
+		Thread.sleep(4000);
 
 		Boolean result = homepageObjHomepage.isLanguageChangedToEnglish();
 		if(result) {

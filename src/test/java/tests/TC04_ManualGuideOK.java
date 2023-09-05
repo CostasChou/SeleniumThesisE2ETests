@@ -54,9 +54,10 @@ public class TC04_ManualGuideOK {
 		extent.attachReporter(htmlReporter);
 	}
 
+	//Test
 	@Test
 	@Parameters({"username", "password"})
-	public static void tC04_ManualGuideOK(String username, String password) {
+	public static void tC04_ManualGuideOK(String username, String password) throws Exception {
 		LogInWebpage logInWebPageObj = new LogInWebpage(driver); 
 
 		// Creates a toggle for the given test, adds all log events under it.    
@@ -98,43 +99,31 @@ public class TC04_ManualGuideOK {
 			test.fail("User is not logged in.");
 		}
 
-		try {
-			Thread.sleep(6000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+		//Wait 6 seconds
+		Thread.sleep(6000);
+	
 
 		Homepage homepageObjHomepage = new Homepage(driver);
 		// Locate an element (you can use any element on the page)
 
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		//Wait 3 seconds
+		Thread.sleep(3000);
+		
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		//specify the WebElement till which the page has to be scrolled
 		WebElement manualGuideButton = driver.findElement(By.linkText("Εγχειρίδιο χρήσης"));
 		js.executeScript("arguments[0].scrollIntoView();", manualGuideButton);
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
+		//Wait 3 seconds
+		Thread.sleep(3000);
+
 
 		if(homepageObjHomepage.isUserManualButtonDisplayed()) {
 			homepageObjHomepage.clickUserManualItemOfCentralMenu();
-			try {
-				Thread.sleep(2500);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+				
+			//Wait 2.5 seconds
+			Thread.sleep(2500);
 
 			// Get the handle of the current window
 			String currentWindowHandle = driver.getWindowHandle();
@@ -147,23 +136,17 @@ public class TC04_ManualGuideOK {
 				if (!windowHandle.equals(currentWindowHandle)) {
 					// Switch to the new tab
 					driver.switchTo().window(windowHandle);
-
-					try {
-						Thread.sleep(2000);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+					//Wait 2 seconds
+					Thread.sleep(2000);
 					}
 				}
 			}
 
 			String redirectedLink = driver.getCurrentUrl();
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
+			//Wait 1 seconds
+			Thread.sleep(1000);
+
 			System.out.println(redirectedLink);
 			if(redirectedLink.equalsIgnoreCase("https://uniportal.ihu.gr/feign/student/general/manual?p=A43D7DAF-2AC1-4D15-9560-2AF3BCCB1CF06CE3C38F-D3FD-404E-8333-293309E7D1BE")) {
 				// Used tests.pass("") command to log the result of the test as "pass" on extent reports.
@@ -176,7 +159,7 @@ public class TC04_ManualGuideOK {
 				assert(false);
 			}	
 		}
-	}
+	
 
 	//Runs after test. Works as tearDown() function. Repetitive actions that take place after the execution of the steps of the test can be placed here
 	@AfterTest

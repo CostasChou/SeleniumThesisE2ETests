@@ -12,8 +12,8 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import io.github.bonigarcia.wdm.WebDriverManager;
-
 import webpages.LogInWebpage;
+
 
 public class TC01_LogInCorrectUsernameCorrectPasswordOK {
 	static WebDriver driver = null;
@@ -49,9 +49,10 @@ public class TC01_LogInCorrectUsernameCorrectPasswordOK {
 		extent.attachReporter(htmlReporter);
 	}
 
+	//Test
 	@Test
 	@Parameters({"username", "password"})
-	public static void tC01LogInCorrectUsernameCorrectPasswordOK(String username, String password) {
+	public static void tC01LogInCorrectUsernameCorrectPasswordOK(String username, String password) throws Exception {
 		LogInWebpage logInWebPageObj = new LogInWebpage(driver); 
 
 		// Creates a toggle for the given test, adds all log events under it.    
@@ -93,14 +94,9 @@ public class TC01_LogInCorrectUsernameCorrectPasswordOK {
 			test.fail("Log in button is not clicked");
 		}
 
-		try {
-			Thread.sleep(6000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-
+		//Wait 6 seconds
+		Thread.sleep(6000);
+		
 		Boolean result = logInWebPageObj.userIsLoggedIn();
 		if(result) {
 			// Used tests.pass("") command to log the result of the test as "pass" on extent reports.

@@ -49,9 +49,10 @@ public class TC12_LogInWithWrongUsernameCorrectPasswordKO {
 		extent.attachReporter(htmlReporter);
 	}
 
+	//Test
 	@Test
 	@Parameters({"wrongUsername", "password"})
-	public static void tC12_LogInWithWrongUsernameCorrectPasswordKO(String username, String password) {
+	public static void tC12_LogInWithWrongUsernameCorrectPasswordKO(String username, String password) throws Exception {
 		LogInWebpage logInWebPageObj = new LogInWebpage(driver); 
 
 		// Creates a toggle for the given test, adds all log events under it.    
@@ -93,13 +94,8 @@ public class TC12_LogInWithWrongUsernameCorrectPasswordKO {
 			test.fail("Log in button is not clicked");
 		}
 
-		try {
-			Thread.sleep(6000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+		//Wait 6 seconds
+		Thread.sleep(6000);
 
 		Boolean loggedIn = logInWebPageObj.userIsLoggedIn();
 		Boolean invalidCredentialsErrorMessageBoolean = driver.getPageSource().contains("Your account is not recognized and cannot login at this time.");

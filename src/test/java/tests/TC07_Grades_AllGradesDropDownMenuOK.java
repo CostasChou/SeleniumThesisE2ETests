@@ -52,9 +52,10 @@ public class TC07_Grades_AllGradesDropDownMenuOK {
 		extent.attachReporter(htmlReporter);
 	}
 
+	//Test
 	@Test
 	@Parameters({"username", "password"})
-	public static void tC01LogInCorrectUsernameCorrectPasswordOK(String username, String password) {
+	public static void tC01LogInCorrectUsernameCorrectPasswordOK(String username, String password) throws Exception {
 		LogInWebpage logInWebPageObj = new LogInWebpage(driver); 
 
 		// Creates a toggle for the given test, adds all log events under it.    
@@ -96,12 +97,8 @@ public class TC07_Grades_AllGradesDropDownMenuOK {
 			test.fail("Log in button is not clicked");
 		}
 
-		try {
-			Thread.sleep(6000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		//Wait 6 seconds
+		Thread.sleep(6000);
 
 		Homepage homepageObj = new Homepage(driver);
 
@@ -115,12 +112,10 @@ public class TC07_Grades_AllGradesDropDownMenuOK {
 		}
 
 		homepageObj.clickGradesItemOfCentralMenu();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e2) {
-			// TODO Auto-generated catch block
-			e2.printStackTrace();
-		}
+
+		//Wait 3 seconds
+		Thread.sleep(3000);
+
 
 		if(homepageObj.isMyBoardMenuItemOfGradesDisplayed() && homepageObj.isAllGradesMenuItemOfGradesDisplayed() && homepageObj.isByExamPeriodMenuItemOfGradesDisplayed()) {
 			test.pass("All menu items of grades central menu item are displayed");
@@ -129,20 +124,15 @@ public class TC07_Grades_AllGradesDropDownMenuOK {
 			test.fail("Not all menu items of grades central menu item are displayed");
 		}
 
-		try {
-			Thread.sleep(2500);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+		//Wait 2.5 seconds
+		Thread.sleep(2500);
+
 
 		homepageObj.clickAllGradesMenuItemOfGrades();
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}	
+
+		//Wait 2 seconds
+		Thread.sleep(2000);
+
 
 		if(homepageObj.isMyBoardMenuItemOfGradesDisplayed() && homepageObj.isAllGradesMenuItemOfGradesDisplayed() && homepageObj.isByExamPeriodMenuItemOfGradesDisplayed()) {
 			test.pass("All options of grades menu are displayed");
@@ -160,12 +150,10 @@ public class TC07_Grades_AllGradesDropDownMenuOK {
 		By allOptionInEntriesDropDownMenuOfAllGradesItemOfGrades = By.xpath("/html[1]/body[1]/div[7]/div[1]/div[2]/div[1]/div[3]/div[3]/div[1]/label[1]/select[1]/option[5]");
 
 		driver.findElement(entriesDropDownMenuOfAllGradesItemOfGrades).click();
-		try {
-			Thread.sleep(4000);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+		
+		//Wait 4 seconds
+		Thread.sleep(4000);
+
 		if (driver.findElement(fiftyOptionInEntriesDropDownMenuOfAllGradesItemOfGrades).isDisplayed() && driver.findElement(oneHundredOptionInEntriesDropDownMenuOfAllGradesItemOfGrades).isDisplayed()
 				&& driver.findElement(twoHundredOptionInEntriesDropDownMenuOfAllGradesItemOfGrades).isDisplayed() && driver.findElement(fiveHundredOptionInEntriesDropDownMenuOfAllGradesItemOfGrades).isDisplayed()
 				&& driver.findElement(allOptionInEntriesDropDownMenuOfAllGradesItemOfGrades).isDisplayed()) {
@@ -178,12 +166,9 @@ public class TC07_Grades_AllGradesDropDownMenuOK {
 
 		driver.findElement(allOptionInEntriesDropDownMenuOfAllGradesItemOfGrades).click();
 
-		try {
-			Thread.sleep(4000);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+		//Wait 4 seconds
+		Thread.sleep(4000);
+
 
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -191,12 +176,10 @@ public class TC07_Grades_AllGradesDropDownMenuOK {
 		WebElement nextButton = driver.findElement(By.xpath("/html[1]/body[1]/div[7]/div[1]/div[2]/div[1]/div[3]/div[4]/div[2]/ul[1]/li[3]"));
 
 		js.executeScript("arguments[0].scrollIntoView();", nextButton);
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			
+		//Wait 3 seconds
+		Thread.sleep(3000);
+
 
 
 		WebElement allEntriesAreDisplayed = driver.findElement(By.cssSelector("li#student_grades_next.paginate_button.next.disabled"));

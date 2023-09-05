@@ -50,9 +50,10 @@ public class TC06_InternshipOK {
 		extent.attachReporter(htmlReporter);
 	}
 
+	//Test
 	@Test
 	@Parameters({"username", "password"})
-	public static void tC06_InternshipOK(String username, String password) {
+	public static void tC06_InternshipOK(String username, String password) throws Exception {
 		LogInWebpage logInWebPageObj = new LogInWebpage(driver); 
 
 		// Creates a toggle for the given test, adds all log events under it.    
@@ -94,12 +95,8 @@ public class TC06_InternshipOK {
 			test.fail("Log in button is not clicked");
 		}
 
-		try {
-			Thread.sleep(6000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		//Wait 6 seconds
+		Thread.sleep(6000);
 
 
 		Homepage homepageObj = new Homepage(driver);
@@ -114,12 +111,9 @@ public class TC06_InternshipOK {
 		}
 
 		homepageObj.clickThesesItemOfCentralMenu();
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+		
+		//Wait 3 seconds
+		Thread.sleep(3000);
 
 		ThesesWebpage thesesWebpageObj = new ThesesWebpage(driver);
 		Boolean result = thesesWebpageObj.isThesesItemDisplayed();
