@@ -15,7 +15,7 @@ JDK is required to run this project. Download JDK here from the official webpage
 
 
 ## Test execution :rocket:  
-⚠️⚠️⚠️ATTENTION! NOT ALL TESTS SHOULD BE EXECUTED PARALLELY! IF TESTS WILL BE EXECUTED PARALLELY IT WILL POSSIBLY AFFECT THE AVAILABILITY OF (https://uniportal.ihu.gr). PLEASE DO NOT EXECUTE MORE THAN 3 TESTS PARALLELY...⚠️⚠️⚠️  
+⚠️⚠️⚠️<u><strong>ATTENTION! NOT ALL TESTS SHOULD BE EXECUTED PARALLELY! IF TESTS WILL BE EXECUTED PARALLELY IT WILL POSSIBLY AFFECT THE AVAILABILITY OF (https://uniportal.ihu.gr). PLEASE DO NOT EXECUTE MORE THAN 3 TESTS PARALLELY...⚠️⚠️⚠️ </strong></u> 
 Tests can be executed by right-clicking on the testng.xml file, selecting "Run as" and then selecting "1 TestNG Suite". 
 ▶︎ More info about execution:  :computer:
 The tests will be executed with the order that is described in "testng.xml" file.
