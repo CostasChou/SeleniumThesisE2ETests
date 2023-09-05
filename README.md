@@ -15,7 +15,9 @@ JDK is required to run this project. Download JDK here from the official webpage
 
 
 ## Test execution :rocket:  
-⚠️⚠️⚠️<u><strong>ATTENTION! NOT ALL TESTS SHOULD BE EXECUTED PARALLELY! IF TESTS WILL BE EXECUTED PARALLELY IT WILL POSSIBLY AFFECT THE AVAILABILITY OF (https://uniportal.ihu.gr). PLEASE DO NOT EXECUTE MORE THAN 3 TESTS PARALLELY...⚠️⚠️⚠️ </strong></u>    
+⚠️⚠️⚠️<u><strong>ATTENTION! NOT ALL TESTS SHOULD BE EXECUTED PARALLELY! IF TESTS WILL BE EXECUTED PARALLELY IT WILL POSSIBLY AFFECT THE AVAILABILITY OF (https://uniportal.ihu.gr). PLEASE DO NOT EXECUTE MORE THAN 3 TESTS PARALLELY... To execute the preferred test(s), select the test(s) that you want to execute by leaving uncommented only the tests that you want to execute in "testng.xml" file.Check the screenshot below to see an example.⚠️⚠️⚠️ </strong></u> 
+![image](https://github.com/CostasChou/SeleniumThesisE2ETests/assets/97087053/41f836f4-2391-4c25-91ef-3012c53e65ce)    
+
 Tests can be executed by right-clicking on the testng.xml file, selecting "Run as" and then selecting "1 TestNG Suite". 
 ▶︎ More info about execution:  :computer:
 The tests will be executed with the order that is described in "testng.xml" file.
